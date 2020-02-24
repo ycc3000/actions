@@ -1,0 +1,16 @@
+name: 'Kubernetes Kubectl Action'
+description: 'GitHub Action for Kubernetes Kubectl.'
+author: 'PiPi <ycc3000@qq.com>'
+branding:
+  icon: 'cloud'
+  color: 'blue'
+inputs:
+  kubeconfig_base64data:
+    description: 'get from kubectl config'
+    required: true
+  run:
+    description: 'scripts'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
