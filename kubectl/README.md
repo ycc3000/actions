@@ -1,6 +1,6 @@
 # kubectl
 ```
-demoname: CI
+name: CI
 on: [push]
 jobs:
   build:
@@ -11,8 +11,8 @@ jobs:
       with:
         kubeconfig_base64data: '${{ secrets.KUBECONFIG_BASE64DATA }}'
         args: get nodes --insecure-skip-tls-verify
-        #run: |
-        #  echo '--------Run after get nodes-------------'
-        #  echo 'kubectl config view'
-        #  kubectl config view
+        run: |
+          echo '-------- will exec args after get nodes-------------'
+          echo '-------- get pods-------------'
+          kubectl get pods --insecure-skip-tls-verify
 ```
